@@ -1,0 +1,7 @@
+{
+  "name": "photoholic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
