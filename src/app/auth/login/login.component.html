@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
+
+  <!-- App Name -->
+  <ion-title class="text-3xl font-bold mt-16 mb-8" color="primary">
+    {{ appName }}
+  </ion-title>
+
+  <!-- Login as Tab -->
+  <ion-segment [(ngModel)]="loginAs" class="mb-4">
+    <ion-segment-button value="user">
+      <ion-label>User</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="photographer">
+      <ion-label>Photographer</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-item class="mb-4 border-gray-300">
+    <ion-input
+      class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
+      type="text"
+      placeholder="Email"
+      [(ngModel)]="email"
+    ></ion-input>
+  </ion-item>
+  
+  <!-- Password Input -->
+  <ion-item class="mb-4 border-gray-300">
+    <ion-input
+      class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+    ></ion-input>
+  </ion-item>
+
+  <!-- Forgot Password -->
+  <ion-button color="medium" fill="clear" size="small" class="mb-4" (click)="forgotPassword()">
+    Forgot Password
+  </ion-button>
+
+  <!-- Login Button -->
+  <ion-button expand="full" (click)="login()" class="mb-4">
+    Login
+  </ion-button>
+
+  <ion-label class="ion-text-center text-gray-500 text-sm mb-4">
+    Don't have an account? 
+    <a (click)="goToSignup()" class="cursor-pointer">Sign up</a>
+  </ion-label>
+
+</ion-content>

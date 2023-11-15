@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <!-- Background Image -->
+  <div class="home-background mb-4">
+    <div class="home-text ion-text-center">
+      <h1 class="text-4xl font-semibold text-white mb-4">
+        Hire expert Photographers for any event, any time.
+      </h1>
+      <p class="text-white">
+        Thousands of people use Photoholic to turn their ideas into reality.
+      </p>
+    </div>
+  </div>
+
+  <!-- Popular Categories Section -->
+  <div class="w-full">
+    <h1 class="text-2xl font-medium mb-4 text-center text-cyan-600">
+      Popular Categories.
+    </h1>
+  </div>
+  <ion-card class="mt-8" *ngFor="let category of popularCategories">
+    <ion-card-header>
+      <div class="flex justify-center">
+        <ion-icon [name]='category.icon' class="text-center text-cyan-600"></ion-icon>
+      </div>
+      <ion-card-title color="primary" class="text-center">{{ category.title }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="text-center">
+      <!-- You can add more details for each category here -->
+      {{ category.description }}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

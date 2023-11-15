@@ -1,0 +1,66 @@
+<!-- signup.page.html -->
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
+
+  <!-- App Name -->
+  <ion-title class="text-3xl font-bold mt-16 mb-8" color="primary">
+    {{ appName }}
+  </ion-title>
+
+  <!-- Signup as Tab -->
+  <ion-segment [(ngModel)]="signupAs" class="mb-4">
+    <ion-segment-button value="user">
+      <ion-label>User</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="photographer">
+      <ion-label>Photographer</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <!-- Name Input -->
+  <ion-item class="mb-4 border-gray-300">
+    <ion-input
+      class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
+      type="text"
+      placeholder="Name"
+      [(ngModel)]="name"
+    ></ion-input>
+  </ion-item>
+
+  <!-- Email Input -->
+  <ion-item class="mb-4 border-gray-300">
+    <ion-input
+      class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
+      type="text"
+      placeholder="Email"
+      [(ngModel)]="email"
+    ></ion-input>
+  </ion-item>
+
+  <!-- Password Input -->
+  <ion-item class="mb-4 border-gray-300">
+    <ion-input
+      class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
+      type="password"
+      placeholder="Password"
+      [(ngModel)]="password"
+    ></ion-input>
+  </ion-item>
+
+  <!-- Sign Up Button -->
+  <ion-button expand="full" (click)="signup()" class="mb-4">
+    Sign Up
+  </ion-button>
+
+  <ion-label class="ion-text-center text-gray-500 text-sm mb-4">
+    Already have an account? 
+    <a (click)="goToLogin()" class="cursor-pointer">Login</a>
+  </ion-label>
+
+</ion-content>

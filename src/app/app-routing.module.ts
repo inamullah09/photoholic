@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { HomepageComponent } from './home/homepage/homepage.component';
 
 const routes: Routes = [
   {
@@ -8,9 +11,24 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'login',
+    pathMatch: 'full',
+    component: LoginComponent
+  },
+  {
+    path: 'signup',
+    pathMatch: 'full',
+    component: SignupComponent
+  },
+  {
+    path: 'home',
+    pathMatch: 'full',
+    component: HomepageComponent
+  },
+  {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  }
+  },
 ];
 
 @NgModule({
