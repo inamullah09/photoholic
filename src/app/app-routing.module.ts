@@ -3,6 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
+import { PhotographerspageComponent } from './home/photographerspage/photographerspage.component';
+import { ViewphotographerpageComponent } from './home/viewphotographerpage/viewphotographerpage.component';
 
 const routes: Routes = [
   {
@@ -24,6 +26,15 @@ const routes: Routes = [
     path: 'home',
     pathMatch: 'full',
     component: HomepageComponent
+  },
+  {
+    path: 'photographers',
+    pathMatch: 'full',
+    component: PhotographerspageComponent
+  },
+  {
+    path: 'viewphotographer/:id',
+    component: ViewphotographerpageComponent
   },
   {
     path: 'folder/:id',
