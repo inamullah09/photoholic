@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-homepage',
@@ -13,7 +14,12 @@ export class HomepageComponent  {
     { title: 'Wedding', description: 'Photography that captures the beauty of nature.', icon: 'aperture' },
   ];
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
+  
+  viewPhotographers() {
+    // Navigate to the signup page
+    this.navCtrl.navigateForward('/photographers'); // Replace '/signup' with the actual path of your signup page
+  }
 
 }

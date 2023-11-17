@@ -1,55 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { HomeService } from '../services/home.service';
+import { IPhotographer, IPhotographers } from '../interfaces/home.interface';
 
-interface IPhotographer {
-  name: string,
-  service: string,
-  imgUrl: string
-}
 
 @Component({
   selector: 'app-photographerspage',
   templateUrl: './photographerspage.component.html',
   styleUrls: ['./photographerspage.component.scss'],
 })
-export class PhotographerspageComponent {
-  photographers: Array<IPhotographer> = [
-    {
-      name: 'Inam',
-      service: 'Wedding Photography',
-      imgUrl: 'https://source.unsplash.com/random',
-    },
-    {
-      name: 'Inam',
-      service: 'Wedding Photography',
-      imgUrl: 'https://source.unsplash.com/random',
-    },
-    {
-      name: 'Inam',
-      service: 'Wedding Photography',
-      imgUrl: 'https://source.unsplash.com/random',
-    },
-    {
-      name: 'Inam',
-      service: 'Wedding Photography',
-      imgUrl: 'https://source.unsplash.com/random',
-    },
-    {
-      name: 'Inam',
-      service: 'Wedding Photography',
-      imgUrl: 'https://source.unsplash.com/random',
-    },
-    {
-      name: 'Inam',
-      service: 'Wedding Photography',
-      imgUrl: 'https://source.unsplash.com/random',
-    },
-    // Add more photographers as needed
-  ];
+export class PhotographerspageComponent implements OnInit{
+  photographers: Array<IPhotographers> = [];
 
-  viewProfile(photographer: IPhotographer) {
-    // Implement navigation to photographer's profile page
-    console.log(`View profile of ${photographer.name}`);
+  constructor(private navCtrl: NavController, private homeService: HomeService) { }
+
+  ngOnInit(): void {
+    this.homeService.getAllPhotographers().subscribe(res => this.photographers = res)
   }
-  constructor() { }
+
+  viewProfile(photographer: IPhotographers) {
+    // Implement navigation to photographer's profile page
+    console.log(`View profile of ${photographer}`);
+    console.log(photographer)
+    this.navCtrl.navigateRoot(`/viewphotographer/${photographer.profileID}`);
+  }
 
 }

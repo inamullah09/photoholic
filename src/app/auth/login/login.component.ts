@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ILogin } from '../interfaces/auth.interface';
+import { AuthService } from '../services/auth.service';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-login',
@@ -11,17 +14,18 @@ export class LoginComponent {
   loginAs = 'user';
   email!: string;
   password!: string;
+  loginData: ILogin = {
+    email: '',
+    password: ''
+  };
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController, private authService: AuthService, private storage: Storage) {}
 
   login() {
-    // Add your login logic here based on this.email, this.password, and this.loginAs
-    console.log('Login as:', this.loginAs);
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
-
-    // Redirect to the home page or any other page upon successful login
-    this.navCtrl.navigateRoot('/home');
+    this.authService.login(this.loginData).subscribe(res => {
+      this.authService.setToken(res.token)
+      this.navCtrl.navigateRoot('/home');
+    })
   }
 
   forgotPassword() {

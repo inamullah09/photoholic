@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ISignup } from '../interfaces/auth.interface';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -10,18 +12,26 @@ export class SignupComponent {
 
   appName = 'Photoholic';
   signupAs = 'user';
-  name!: string;
-  email!: string;
-  password!: string;
+  signupData: ISignup = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    role: ''
+  };
 
-   constructor(private navCtrl: NavController) {}
+   constructor(private navCtrl: NavController, private authService: AuthService) {}
 
    goToLogin() {
-     // Navigate to the login page
+    
      this.navCtrl.navigateBack('/login'); // Replace '/login' with the actual path of your login page
    }
  
    signup() {
+     this.signupData.role = this.signupAs;
+     this.authService.signup(this.signupData).subscribe(res => {
+      console.log(res);
+     })
      // Implement your signup logic here
-   }
+   };
 }

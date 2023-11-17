@@ -6,3 +6,51 @@
     <ion-title>Photographer</ion-title>
   </ion-toolbar>
 </ion-header>
+
+<ion-content class="ion-padding">
+  <div class="flex flex-col items-center">
+    <img src="https://source.unsplash.com/random" alt="Photographer Avatar" class="rounded-full w-24 h-24 mb-4">
+    <h2 class="text-2xl font-semibold mb-2 text-cyan-600">Rabbaniyeh</h2>
+    <p class="text-gray-500 mb-4">Photography Specialist</p>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title color="primary">About</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="flex items-center mb-2">
+        <ion-icon name="person" class="mr-2" size="medium"></ion-icon>
+        <p class="text-sm text-gray-600">Age: 28</p>
+      </div>
+      <div class="flex items-center mb-2">
+        <ion-icon name="transgender" class="mr-2" size="medium"></ion-icon>
+        <p class="text-sm text-gray-600">Gender: Female</p>
+      </div>
+      <div class="flex items-center">
+        <ion-icon name="location" class="mr-2" size="medium"></ion-icon>
+        <p class="text-sm text-gray-600">City: New York</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title color="primary">Portfolio</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <!-- Display photographer's portfolio items here -->
+      <ion-img src="https://source.unsplash.com/random" class="mb-2"></ion-img>
+      <ion-img src="https://source.unsplash.com/random" class="mb-2"></ion-img>
+      <!-- Add more portfolio items as needed -->
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" (click)="viewPackages()" class="mt-4">
+    View Packages
+  </ion-button>
+
+  <ion-button expand="full" (click)="viewPackages()" class="my-4">
+    Chat
+  </ion-button>
+</ion-content>
