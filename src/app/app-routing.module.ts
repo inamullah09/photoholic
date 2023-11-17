@@ -3,11 +3,14 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomepageComponent } from './home/homepage/homepage.component';
+import { PhotographerspageComponent } from './home/photographerspage/photographerspage.component';
+import { ViewphotographerpageComponent } from './home/viewphotographerpage/viewphotographerpage.component';
+import { PackagespageComponent } from './home/packagespage/packagespage.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -24,6 +27,19 @@ const routes: Routes = [
     path: 'home',
     pathMatch: 'full',
     component: HomepageComponent
+  },
+  {
+    path: 'photographers',
+    pathMatch: 'full',
+    component: PhotographerspageComponent
+  },
+  {
+    path: 'viewphotographer/:id',
+    component: ViewphotographerpageComponent
+  },
+  {
+    path: 'packages',
+    component: PackagespageComponent
   },
   {
     path: 'folder/:id',

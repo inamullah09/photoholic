@@ -1,34 +1,30 @@
 // home.page.scss
 
+.home-background {
+  position: relative;
+  height: 300px;
+  background-image: url("../../../assets/home-background.jpg");
+  background-size: cover;
+  background-color: #333;
+  background-position: center;
+  .home-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  /* Add a dark overlay using ::before */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.655); /* Adjust the alpha value for darkness */
+  }
+}
 
-    .home-background {
-      position: relative;
-      height: 300px; /* Adjust the height as needed */
-      background-image: url('/src/assets/home-background.jpg'); /* Replace with the actual path to your image */
-      background-size: cover;
-      background-color: #333;
-      background-position: center;
-      .home-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
-
-
-    ion-icon {
-        font-size: 40px;
-    }
-
-    .swiper-container {
-        width: 100%;
-      }
-      
-      .swiper-slide {
-        width: 80%; // Adjust the width of each card
-      }
-      
-      .swiper-pagination {
-        bottom: 10px;
-      }
+ion-icon {
+  font-size: 40px;
+}

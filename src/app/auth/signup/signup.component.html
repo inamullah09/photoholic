@@ -28,8 +28,16 @@
     <ion-input
       class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
       type="text"
-      placeholder="Name"
-      [(ngModel)]="name"
+      placeholder="First Name"
+      [(ngModel)]="signupData.firstName"
+    ></ion-input>
+  </ion-item>
+  <ion-item class="mb-4 border-gray-300">
+    <ion-input
+      class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
+      type="text"
+      placeholder="Last Name"
+      [(ngModel)]="signupData.lastName"
     ></ion-input>
   </ion-item>
 
@@ -39,7 +47,7 @@
       class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
       type="text"
       placeholder="Email"
-      [(ngModel)]="email"
+      [(ngModel)]="signupData.email"
     ></ion-input>
   </ion-item>
 
@@ -49,7 +57,7 @@
       class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
       type="password"
       placeholder="Password"
-      [(ngModel)]="password"
+      [(ngModel)]="signupData.password"
     ></ion-input>
   </ion-item>
 

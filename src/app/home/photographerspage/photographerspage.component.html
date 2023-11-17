@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Photographers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
+
+  <!-- Photographer List -->
+  <ion-list class="ion-no-padding">
+
+    <!-- Photographer Item 1 -->
+    <ion-item class="photographer-item" *ngFor="let photographer of photographers">
+      <ion-avatar slot="start">
+        <ion-img [src]="photographer.pofilePicture" alt="Photographer Avatar"></ion-img>
+      </ion-avatar>
+      <ion-label class="ion-text-left">
+        <h2>{{ photographer.profileTitle }}</h2>
+        <p>{{ photographer.profileAbout }}</p>
+      </ion-label>
+      <ion-button expand="full" size="medium" (click)="viewProfile(photographer)">
+        Profile
+      </ion-button>
+    </ion-item>
+
+    <!-- Add more photographer items as needed -->
+
+  </ion-list>
+
+</ion-content>
