@@ -11,6 +11,8 @@ import { CreatepackagepageComponent } from './home/createpackagepage/createpacka
 import { UploadimagespageComponent } from './home/uploadimagespage/uploadimagespage.component';
 import { VieworderspageComponent } from './home/vieworderspage/vieworderspage.component';
 import { CreatephotographerpageComponent } from './home/createphotographerpage/createphotographerpage.component';
+import { UserpaymentspageComponent } from './home/userpaymentspage/userpaymentspage.component';
+import { ForgetpageComponent } from './auth/forgetpage/forgetpage.component';
 
 const routes: Routes = [
   {
@@ -27,6 +29,10 @@ const routes: Routes = [
     path: 'signup',
     pathMatch: 'full',
     component: SignupComponent
+  },
+  {
+    path: 'forgot',
+    component: ForgetpageComponent
   },
   {
     path: 'home',
@@ -65,6 +71,10 @@ const routes: Routes = [
   {
     path: 'createprofile',
     component: CreatephotographerpageComponent
+  },
+  {
+    path: 'userpayments',
+    component: UserpaymentspageComponent
   }
 ];
 

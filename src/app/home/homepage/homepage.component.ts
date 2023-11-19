@@ -18,8 +18,11 @@ export class HomepageComponent  {
 
   
   viewPhotographers() {
-    // Navigate to the signup page
-    this.navCtrl.navigateForward('/photographers'); // Replace '/signup' with the actual path of your signup page
+    this.navCtrl.navigateForward('/photographers');
+  }
+
+  viewPayments() {
+    this.navCtrl.navigateForward('/userpayments');
   }
 
 }

@@ -30,6 +30,8 @@ export interface IPhotographers {
     skills: ISkill[];
     pakages: IPackage[];
     images: IImage[];
+    photograperName: string;
+    profilePicture: string;
   }
   
   export interface IOrder {
@@ -63,6 +65,16 @@ export interface IPhotographers {
     totalAmount: string;
     clientEmail: string;
     clientName: string;
+  }
+
+  export interface IUserPayments {
+    pakageName: string;
+    orderdOn: string;
+    totalOrders: number;
+    serviceRequiredOn: string;
+    ammount: string;
+    profileId: number;
+    profileName: string;
   }
   
   export interface ICreatePhotographer {

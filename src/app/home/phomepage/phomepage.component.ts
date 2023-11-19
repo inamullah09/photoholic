@@ -1,14 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-phomepage',
   templateUrl: './phomepage.component.html',
   styleUrls: ['./phomepage.component.scss'],
 })
-export class PhomepageComponent  implements OnInit {
+export class PhomepageComponent {
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
-  ngOnInit() {}
+  goToCreatePackage() {
+    console.log("nnav")
+    this.navCtrl.navigateForward('/createpackage');
+  }
 
+  goToUploadImages() {
+    this.navCtrl.navigateForward('/uploadimages');
+  }
+
+  goToViewOrders() {
+    this.navCtrl.navigateForward('/vieworders');
+  }
 }

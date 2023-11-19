@@ -13,7 +13,6 @@ import { HomeService } from 'src/app/home/services/home.service';
 })
 export class LoginComponent {
   appName = 'Photoholic';
-  loginAs = 'user';
   email!: string;
   password!: string;
   loginData: ILogin = {
@@ -25,6 +24,7 @@ export class LoginComponent {
 
   login() {
     this.authService.login(this.loginData).subscribe(res => {
+      this.authService.presentToast('Login success')
       this.authService.setToken(res.token)
       const decodedToken = this.tokenService.decodeToken(res.token);
       console.log(decodedToken)
@@ -32,16 +32,19 @@ export class LoginComponent {
       const profileId = decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/userdata'];
       this.homeService.profileId = profileId;
       this.homeService.userRole = role;
+      this.homeService.userEmail = this.loginData.email;
       this.homeService.userRoleSub.next(role);
       console.log(role);
       this.authService.setUserProfile(JSON.stringify(this.loginData))
       role == 'user' ? this.navCtrl.navigateRoot('/home') : this.navCtrl.navigateRoot('/phome');
+    }, (err) => {
+      this.authService.presentToast('Please enter valid login credentials')
     })
   }
 
   forgotPassword() {
     // Add your forgot password logic here
-    console.log('Forgot Password');
+    this.navCtrl.navigateForward('/forgot')
   }
 
   

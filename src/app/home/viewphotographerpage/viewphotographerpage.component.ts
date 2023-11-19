@@ -30,9 +30,14 @@ export class ViewphotographerpageComponent implements OnInit{
     });
   }
 
-
   viewPackages() { 
     this.homeService.photographerPackages = this.photographer.pakages;
-    this.navCtrl.navigateRoot(`/packages`);
+    this.navCtrl.navigateForward(`/packages`);
+  }
+
+  imageError = false;
+
+  handleImageError(): void {
+    this.imageError = true;
   }
 }
