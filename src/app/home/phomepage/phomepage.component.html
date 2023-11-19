@@ -19,7 +19,7 @@
           </ion-card-header>
           <ion-card-content class="ion-text-center">
             Create packages for your clients.
-            <ion-button expand="full" color="primary" class="mt-2" routerLink="/createpackage">Go to Packages</ion-button>
+            <ion-button expand="full" color="primary" class="mt-2" (click)="goToCreatePackage()" >Go to Packages</ion-button>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -31,7 +31,7 @@
           </ion-card-header>
           <ion-card-content class="ion-text-center">
             Upload and showcase your stunning photography work.
-            <ion-button expand="full" color="primary" class="mt-2" routerLink="/uploadimages">Upload Images</ion-button>
+            <ion-button expand="full" color="primary" class="mt-2" (click)="goToUploadImages()">Upload Images</ion-button>
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -43,7 +43,7 @@
           </ion-card-header>
           <ion-card-content class="ion-text-center">
             Keep track of orders and manage client requests.
-            <ion-button expand="full" color="primary" class="mt-2" routerLink="/vieworders">View Orders</ion-button>
+            <ion-button expand="full" color="primary" class="mt-2" (click)="goToViewOrders()" >View Orders</ion-button>
           </ion-card-content>
         </ion-card>
       </ion-col>

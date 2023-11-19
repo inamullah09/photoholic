@@ -33,10 +33,14 @@ export class SignupComponent {
      this.authService.signup(this.signupData).subscribe(res => {
       this.homeService.userEmail = this.signupData.email;
       if (this.signupAs === 'user') {
+        this.authService.presentToast('Account created')
         this.navCtrl.navigateRoot('/home')
       } else {
+        this.authService.presentToast('Account created, please enter your info to continue')
         this.navCtrl.navigateRoot('/createprofile')
       }
+    }, err => {
+      this.authService.presentToast('Please enter valid login credentials')
     })
      // Implement your signup logic here
    };

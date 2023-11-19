@@ -15,7 +15,8 @@
     <!-- Photographer Item 1 -->
     <ion-item class="photographer-item" *ngFor="let photographer of photographers">
       <ion-avatar slot="start">
-        <ion-img [src]="photographer.pofilePicture" alt="Photographer Avatar"></ion-img>
+        <ion-img [src]="photographer.pofilePicture"alt="Photographer Avatar" 
+        onerror="this.src='../../../assets/dummy-user.webp'" ></ion-img>
       </ion-avatar>
       <ion-label class="ion-text-left">
         <h2>{{ photographer.profileTitle }}</h2>

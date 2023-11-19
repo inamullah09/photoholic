@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../services/home.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-uploadimagespage',
@@ -10,7 +11,7 @@ import { HomeService } from '../services/home.service';
 export class UploadimagespageComponent {
   selectedImages: File[] = [];
 
-  constructor(private homeService: HomeService) {}
+  constructor(private homeService: HomeService, private navCtrl: NavController) {}
 
   onFileSelected(event: any): void {
     const files: FileList = event.target.files;
@@ -27,7 +28,11 @@ export class UploadimagespageComponent {
 
   uploadImages() {
     this.homeService.uploadImages(Number.parseInt(this.homeService.profileId), this.selectedImages).subscribe(res=>{
-
+      this.homeService.presentToast('Image uploaded successfully')
+      this.navCtrl.navigateForward('phome')
+    }, (err) => {
+      this.homeService.presentToast('Error uploading image')
+      this.navCtrl.navigateForward('phome')
     })
   }
 }

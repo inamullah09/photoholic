@@ -12,6 +12,7 @@ import { CreatepackagepageComponent } from './createpackagepage/createpackagepag
 import { UploadimagespageComponent } from './uploadimagespage/uploadimagespage.component';
 import { VieworderspageComponent } from './vieworderspage/vieworderspage.component';
 import { CreatephotographerpageComponent } from './createphotographerpage/createphotographerpage.component';
+import { UserpaymentspageComponent } from './userpaymentspage/userpaymentspage.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CreatephotographerpageComponent } from './createphotographerpage/create
     CreatepackagepageComponent,
     UploadimagespageComponent,
     VieworderspageComponent,
-    CreatephotographerpageComponent
+    CreatephotographerpageComponent,
+    UserpaymentspageComponent
   ],
   imports: [
     CommonModule,

@@ -29,19 +29,12 @@ export class PackagespageComponent implements OnInit{
       email: userData.email || 'test333@fmail.com'
     } 
     this.homeService.orderPackage(order).subscribe(res => {
-      console.log('done')
-      this.presentToast();
+      this.homeService.presentToast('Order placed successfully')
+      this.navCtrl.navigateRoot('home')
+    }, err => {
+      this.homeService.presentToast('Unable to place order')
       this.navCtrl.navigateRoot('home')
     })
   }
 
-  async presentToast() {
-    const toast = await this.toast.create({
-      message: 'Order Placed, please wait for photographers verification!',
-      duration: 3500,
-      position: 'bottom',
-    });
-
-    await toast.present();
-  }
 }

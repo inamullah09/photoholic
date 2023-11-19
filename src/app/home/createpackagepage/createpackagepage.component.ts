@@ -25,6 +25,10 @@ export class CreatepackagepageComponent {
       
     }
     this.homeService.createPackage(createNewPackage).subscribe(res => {
+      this.homeService.presentToast('Package created')
+      this.navCtrl.navigateRoot('phome')
+    }, err => {
+      this.homeService.presentToast('Error creating package')
       this.navCtrl.navigateRoot('phome')
     })
   }

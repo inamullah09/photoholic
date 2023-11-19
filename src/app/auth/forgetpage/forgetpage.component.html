@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Change Password</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding ion-text-center">
+
+  <!-- App Name -->
+  <ion-title class="text-3xl font-bold mt-16 mb-8" color="primary">
+    {{ appName }}
+  </ion-title>
+
+  <!-- Email Input -->
+  <ion-item class="mb-4 border-gray-300">
+    <ion-input
+      class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
+      type="text"
+      placeholder="Email"
+      [(ngModel)]="forgotPasswordData.email"
+    ></ion-input>
+  </ion-item>
+
+  
+  <!-- Old Password Input -->
+  <ion-item class="mb-4 border-gray-300">
+    <ion-input
+      class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
+      type="password"
+      placeholder="Old Password"
+      [(ngModel)]="forgotPasswordData.oldPassword"
+    ></ion-input>
+  </ion-item>
+
+
+  <!-- New Password Input -->
+  <ion-item class="mb-4 border-gray-300">
+    <ion-input
+      class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
+      type="password"
+      placeholder="New Password"
+      [(ngModel)]="forgotPasswordData.newPassword"
+    ></ion-input>
+  </ion-item>
+
+
+  <!-- Reset Password Button -->
+  <ion-button expand="full" (click)="resetPassword()" class="mb-4">
+    Reset Password
+  </ion-button>
+
+  <!-- Back to Login -->
+  <ion-button color="medium" fill="clear" size="small" class="mb-4" (click)="goToLogin()">
+    Back to Login
+  </ion-button>
+
+</ion-content>

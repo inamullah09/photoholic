@@ -60,6 +60,9 @@
     ></ion-input>
     </ion-item>
 
+    <h1 class="text-center text-2xl text-cyan-600 mb-4">Select image to upload</h1>
+    <input type="file" (change)="onFileSelected($event)" multiple accept="image/*" class="mb-4"/>
+
     <ion-button expand="full" color="primary" (click)="createProfile()">Create Profile</ion-button>
   </form>
 </ion-content>
