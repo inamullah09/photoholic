@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { ISignup } from '../interfaces/auth.interface';
 import { AuthService } from '../services/auth.service';
+import { HomeService } from 'src/app/home/services/home.service';
 
 @Component({
   selector: 'app-signup',
@@ -20,7 +21,7 @@ export class SignupComponent {
     role: ''
   };
 
-   constructor(private navCtrl: NavController, private authService: AuthService) {}
+   constructor(private navCtrl: NavController, private authService: AuthService, private homeService: HomeService) {}
 
    goToLogin() {
     
@@ -30,7 +31,12 @@ export class SignupComponent {
    signup() {
      this.signupData.role = this.signupAs;
      this.authService.signup(this.signupData).subscribe(res => {
-      this.signupAs == 'user' ? this.navCtrl.navigateRoot('/home'): this.navCtrl.navigateRoot('/phome');
+      this.homeService.userEmail = this.signupData.email;
+      if (this.signupAs === 'user') {
+        this.navCtrl.navigateRoot('/home')
+      } else {
+        this.navCtrl.navigateRoot('/createprofile')
+      }
     })
      // Implement your signup logic here
    };

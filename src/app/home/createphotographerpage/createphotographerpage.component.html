@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Create Package</ion-title>
+    <ion-title>Photographer</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -14,9 +14,9 @@
       <ion-input
       class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
       type="text"
-      placeholder="Name"
+      placeholder="About"
       name="packageName"
-      [(ngModel)]="packageName"
+      [(ngModel)]="createPhotographer.about"
     ></ion-input>
     </ion-item>
 
@@ -24,9 +24,9 @@
       <ion-input
       class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
       type="text"
-      placeholder="Price"
+      placeholder="Location"
       name="packagePrice"
-      [(ngModel)]="packagePrice"
+      [(ngModel)]="createPhotographer.location"
     ></ion-input>
     </ion-item>
 
@@ -34,12 +34,32 @@
       <ion-input
       class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
       type="text"
-      placeholder="Description"
+      placeholder="Phone"
       name="packageDescription"
-      [(ngModel)]="packageDescription"
+      [(ngModel)]="createPhotographer.phone"
     ></ion-input>
     </ion-item>
 
-    <ion-button expand="full" color="primary" (click)="addPackage()">Add Package</ion-button>
+    <ion-item>
+      <ion-input
+      class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
+      type="text"
+      placeholder="Name"
+      name="packageDescription"
+      [(ngModel)]="createPhotographer.title"
+    ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+      class="px-4 border-none focus:border-none py-2 w-full placeholder-gray-500 text-sm"
+      type="text"
+      placeholder="Weblink"
+      name="packageDescription"
+      [(ngModel)]="createPhotographer.webLink"
+    ></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" color="primary" (click)="createProfile()">Create Profile</ion-button>
   </form>
 </ion-content>

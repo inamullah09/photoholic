@@ -17,7 +17,7 @@ export class CreatepackagepageComponent {
 
   public addPackage() {
     const createNewPackage: ICreatePackage = {
-      profileId: 3,
+      profileId: Number.parseInt(this.homeService.profileId),
       pakageName: this.packageName,
       description: this.packageDescription,
       price: this.packagePrice,

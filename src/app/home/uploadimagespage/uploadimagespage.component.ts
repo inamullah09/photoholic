@@ -26,7 +26,7 @@ export class UploadimagespageComponent {
   }
 
   uploadImages() {
-    this.homeService.uploadImages(1, this.selectedImages).subscribe(res=>{
+    this.homeService.uploadImages(Number.parseInt(this.homeService.profileId), this.selectedImages).subscribe(res=>{
 
     })
   }

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { APPCONSTANTS } from 'src/app/consts';
-import { ICreatePackage, IImage, IOrder, IOrders, IPackage, IPhotographer, IPhotographers } from '../interfaces/home.interface';
+import { ICreatePackage, ICreatePhotographer, IImage, IOrder, IOrders, IPackage, IPhotographer, IPhotographers } from '../interfaces/home.interface';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -11,6 +11,11 @@ import { Subject } from 'rxjs';
 export class HomeService {
   public photographerPackages: IPackage[] = [];
   public photographers: IPhotographers[] = [];
+  public userEmail: string = ''
+  public userRole: string = ''
+  public userRoleSub: Subject<string> = new Subject();
+  
+  public profileId: string = ''
 
   constructor(private http: HttpClient) { }
 
@@ -28,6 +33,10 @@ export class HomeService {
 
   public createPackage(order: ICreatePackage): Observable<any> {
     return this.http.post<any>(`${APPCONSTANTS.ENDPOINT}profile/AddProfilePakage`, order)
+  }
+
+  public createProfile(profile: ICreatePhotographer): Observable<any> {
+    return this.http.post<any>(`${APPCONSTANTS.ENDPOINT}profile/CreatProfile`, profile)
   }
 
   public getPaymentHistory(id: string): Observable<IOrders[]> {

@@ -12,7 +12,7 @@ export class VieworderspageComponent  implements OnInit {
   constructor(private homeService: HomeService) { }
 
   ngOnInit() {
-    this.homeService.getPaymentHistory('2').subscribe(res => {
+    this.homeService.getPaymentHistory(this.homeService.profileId).subscribe(res => {
       this.packages = res;
     })
   }
