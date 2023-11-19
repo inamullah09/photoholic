@@ -8,17 +8,28 @@ import { PhotographerspageComponent } from './photographerspage/photographerspag
 import { ViewphotographerpageComponent } from './viewphotographerpage/viewphotographerpage.component';
 import { PackagespageComponent } from './packagespage/packagespage.component';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { PhomepageComponent } from './phomepage/phomepage.component';
+import { CreatepackagepageComponent } from './createpackagepage/createpackagepage.component';
+import { UploadimagespageComponent } from './uploadimagespage/uploadimagespage.component';
+import { VieworderspageComponent } from './vieworderspage/vieworderspage.component';
 
 @NgModule({
-  declarations: [HomepageComponent, PhotographerspageComponent, ViewphotographerpageComponent, PackagespageComponent],
+  declarations: [
+    HomepageComponent,
+    PhotographerspageComponent,
+    ViewphotographerpageComponent,
+    PackagespageComponent,
+    PhomepageComponent,
+    CreatepackagepageComponent,
+    UploadimagespageComponent,
+    VieworderspageComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     FolderPageRoutingModule,
-    HttpClientModule
-  ]
+    HttpClientModule,
+  ],
 })
-export class HomeModule { }
+export class HomeModule {}

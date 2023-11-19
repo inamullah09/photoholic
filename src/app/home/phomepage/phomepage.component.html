@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Photographer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <h1 class="text-center text-2xl text-cyan-600 my-2">Welcome</h1>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="12" size-md="6" size-lg="4" class="mb-4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Add Packages</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            Create packages for your clients.
+            <ion-button expand="full" color="primary" class="mt-2" routerLink="/createpackage">Go to Packages</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-md="6" size-lg="4" class="mb-4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Add Images</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            Upload and showcase your stunning photography work.
+            <ion-button expand="full" color="primary" class="mt-2" routerLink="/uploadimages">Upload Images</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size="12" size-md="6" size-lg="4" class="mb-4">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>View Orders</ion-card-title>
+          </ion-card-header>
+          <ion-card-content class="ion-text-center">
+            Keep track of orders and manage client requests.
+            <ion-button expand="full" color="primary" class="mt-2" routerLink="/vieworders">View Orders</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
