@@ -10,6 +10,7 @@ import { PhomepageComponent } from './home/phomepage/phomepage.component';
 import { CreatepackagepageComponent } from './home/createpackagepage/createpackagepage.component';
 import { UploadimagespageComponent } from './home/uploadimagespage/uploadimagespage.component';
 import { VieworderspageComponent } from './home/vieworderspage/vieworderspage.component';
+import { CreatephotographerpageComponent } from './home/createphotographerpage/createphotographerpage.component';
 
 const routes: Routes = [
   {
@@ -62,9 +63,9 @@ const routes: Routes = [
     component: VieworderspageComponent
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
+    path: 'createprofile',
+    component: CreatephotographerpageComponent
+  }
 ];
 
 @NgModule({

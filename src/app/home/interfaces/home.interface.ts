@@ -65,4 +65,11 @@ export interface IPhotographers {
     clientName: string;
   }
   
-  
+  export interface ICreatePhotographer {
+    email: string;
+    title: string;
+    about: string;
+    phone: string;
+    location: string;
+    webLink: string; 
+}

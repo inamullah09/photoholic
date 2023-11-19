@@ -4,7 +4,6 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { FolderPageRoutingModule } from '../folder/folder-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -18,7 +17,6 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule,
     HttpClientModule
   ],
 })
