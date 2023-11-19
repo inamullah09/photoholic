@@ -1,34 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController, ToastController } from '@ionic/angular';
-
-interface IPackage {
-  id: number,
-  name: string,
-  description: string,
-  price: number
-}
+import { HomeService } from '../services/home.service';
+import { IOrder, IPackage } from '../interfaces/home.interface';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-packagespage',
   templateUrl: './packagespage.component.html',
   styleUrls: ['./packagespage.component.scss'],
 })
-export class PackagespageComponent {
-  photographerPackages: Array<IPackage> = [
-    { id: 1, name: 'Basic Package', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', price: 150 },
-    { id: 2, name: 'Premium Package', description: 'Quisque varius lectus vel aliquet feugiat.', price: 250 },
-    { id: 3, name: 'Diamond Package', description: 'Quisque varius lectus vel aliquet feugiat.', price: 250 },
-    { id: 4, name: 'Gold Package', description: 'Quisque varius lectus vel aliquet feugiat.', price: 450 },
-  ];
+export class PackagespageComponent implements OnInit{
+  public photographerPackages: IPackage[] = [];
 
-  constructor(private navCtrl: NavController, private toast: ToastController) {}
+  constructor(private navCtrl: NavController, private toast: ToastController, private homeService: HomeService, private authService: AuthService) {}
 
-  orderPackage(photoPackage: IPackage) {
-    // Handle the order logic here
-    console.log(`Order placed for ${photoPackage.name}`);
-    // You can add additional logic, such as navigating to a confirmation page
-    this.presentToast();
-    this.navCtrl.navigateRoot('home')
+  ngOnInit(): void {
+    this.photographerPackages = this.homeService.photographerPackages;
+  }
+
+  async orderPackage(photoPackage: IPackage) {
+    const userData = JSON.parse(await this.authService.getUserProfile())
+    console.log(userData)
+    const order: IOrder = {
+      pakageId: photoPackage.pakageId,
+      totalOrders: 1,
+      ammount: photoPackage.price.toString(),
+      serviceRequiredOn: new Date().toISOString(),
+      email: userData.email || 'test333@fmail.com'
+    } 
+    this.homeService.orderPackage(order).subscribe(res => {
+      console.log('done')
+      this.presentToast();
+      this.navCtrl.navigateRoot('home')
+    })
   }
 
   async presentToast() {

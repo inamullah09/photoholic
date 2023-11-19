@@ -6,6 +6,10 @@ import { HomepageComponent } from './home/homepage/homepage.component';
 import { PhotographerspageComponent } from './home/photographerspage/photographerspage.component';
 import { ViewphotographerpageComponent } from './home/viewphotographerpage/viewphotographerpage.component';
 import { PackagespageComponent } from './home/packagespage/packagespage.component';
+import { PhomepageComponent } from './home/phomepage/phomepage.component';
+import { CreatepackagepageComponent } from './home/createpackagepage/createpackagepage.component';
+import { UploadimagespageComponent } from './home/uploadimagespage/uploadimagespage.component';
+import { VieworderspageComponent } from './home/vieworderspage/vieworderspage.component';
 
 const routes: Routes = [
   {
@@ -40,6 +44,22 @@ const routes: Routes = [
   {
     path: 'packages',
     component: PackagespageComponent
+  },
+  {
+    path: 'phome',
+    component: PhomepageComponent
+  },
+  {
+    path: 'createpackage',
+    component: CreatepackagepageComponent
+  },
+  {
+    path: 'uploadimages',
+    component: UploadimagespageComponent
+  },
+  {
+    path: 'vieworders',
+    component: VieworderspageComponent
   },
   {
     path: 'folder/:id',

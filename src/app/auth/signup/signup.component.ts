@@ -30,8 +30,8 @@ export class SignupComponent {
    signup() {
      this.signupData.role = this.signupAs;
      this.authService.signup(this.signupData).subscribe(res => {
-      console.log(res);
-     })
+      this.signupAs == 'user' ? this.navCtrl.navigateRoot('/home'): this.navCtrl.navigateRoot('/phome');
+    })
      // Implement your signup logic here
    };
 }

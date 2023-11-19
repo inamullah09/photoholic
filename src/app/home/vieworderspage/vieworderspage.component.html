@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Photographer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1 class="text-center text-2xl text-cyan-600 mb-4">Orders</h1>
+  <ion-card *ngFor="let package of packages" class="mb-4">
+    <ion-card-header>
+      <ion-card-title>{{ package.packageName }}</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <p class="text-gray-500">{{ package.description }}</p>
+      <div class="flex items-center mb-2">
+        <p class="text-sm text-gray-600">Hours: {{ package.hours }}</p>
+      </div>
+      <div class="flex items-center mb-2">
+        <p class="text-sm text-gray-600">Price: {{ package.price }}</p>
+      </div>
+      <div class="flex items-center mb-2">
+        <p class="text-sm text-gray-600">Order ID: {{ package.orderId }}</p>
+      </div>
+      <div class="flex items-center mb-2">
+        <p class="text-sm text-gray-600">Total Orders: {{ package.totalOrders }}</p>
+      </div>
+      <div class="flex items-center mb-2">
+        <p class="text-sm text-gray-600">Total Amount: {{ package.totalAmount }}</p>
+      </div>
+      <div class="flex items-center">
+        <p class="text-sm text-gray-600">Client: {{ package.clientName }} ({{ package.clientEmail }})</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -15,8 +15,21 @@ export class PhotographerspageComponent implements OnInit{
   constructor(private navCtrl: NavController, private homeService: HomeService) { }
 
   ngOnInit(): void {
-    this.homeService.getAllPhotographers().subscribe(res => this.photographers = res)
+    if (this.homeService.photographers.length) {
+      this.photographers = this.homeService.photographers
+    } else {
+      this.getAllPhotographers()
+    }
   }
+
+  private getAllPhotographers() {
+    this.homeService.getAllPhotographers().subscribe(res => {
+      this.photographers = res
+      this.homeService.photographers = res;
+    })
+  }
+
+
 
   viewProfile(photographer: IPhotographers) {
     // Implement navigation to photographer's profile page
